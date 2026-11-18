@@ -57,11 +57,48 @@ Compare the original, opened, and closed images.
 
 ## Developed By
 
-**Name:** ____________________________
+**Name:** Janani S
 
-**Register No:** ______________________
+**Register No:**212224230103
+```
 
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+
+img = cv2.imread("C:/Users/admin/OneDrive/Documents/Downloads/image 10.jpg", 0)
+
+kernel = np.ones((5, 5), np.uint8)
+
+opening = cv2.morphologyEx(img, cv2.MORPH_OPEN, kernel)
+
+closing = cv2.morphologyEx(img, cv2.MORPH_CLOSE, kernel)
+
+plt.figure(figsize=(12, 4))
+
+plt.subplot(1, 3, 1)
+plt.imshow(img, cmap="gray")
+plt.title("Original")
+plt.axis("off")
+
+plt.subplot(1, 3, 2)
+plt.imshow(opening, cmap="gray")
+plt.title("Opening")
+plt.axis("off")
+
+plt.subplot(1, 3, 3)
+plt.imshow(closing, cmap="gray")
+plt.title("Closing")
+plt.axis("off")
+
+plt.tight_layout()
+plt.show()
+
+
+```
 ## Output
+<img width="1340" height="323" alt="Screenshot 2026-11-18 125647" src="https://github.com/user-attachments/assets/4478f26d-3cbd-44e1-830a-8a99f7b77283" />
+
 
 ### Original Image
 
